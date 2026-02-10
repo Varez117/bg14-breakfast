@@ -47,7 +47,7 @@ function checkScheduleVisuals() {
         if (!existingBanner) {
             const banner = document.createElement('div');
             // Asegúrate de cambiar el texto aquí también
-            banner.innerHTML = "🌙 <b>CERRADO</b> Horario de atención: 7:30 AM a 12:00 AM";
+            banner.innerHTML = "🌙 <b>CERRADO</b> Horario de atención: 7:30 AM a 5:00 PM";
             banner.className = "closed-banner";
             document.body.prepend(banner);
         }
