@@ -855,7 +855,34 @@ body {
 .toast.hiding {
   animation: toastExit 0.4s forwards;
 }
+/* Ajustes para móviles (Redmi Note 14 y similares) */
+@media (max-width: 600px) {
+    /* Reducimos el tamaño del texto para que no desborde */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
 
+    /* Aseguramos que el contenedor de categorías no se rompa */
+    .category-scroll {
+        justify-content: flex-start; /* Permite el scroll lateral natural */
+        padding: 10px;
+    }
+
+    /* Hacemos que las tarjetas de comida ocupen más espacio visual */
+    .menu-grid {
+        grid-template-columns: 1fr; /* Una sola columna para que se vea grande */
+        gap: 20px;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+}
 @keyframes toastEnter {
   from {
     opacity: 0;
@@ -883,3 +910,4 @@ body {
     transform: translateY(0);
   }
 }
+
