@@ -25,7 +25,73 @@ body {
   overflow-x: hidden;
   padding-bottom: 80px;
 }
+/* === ESTILOS "MODO CERRADO" (UX MEJORADO) === */
 
+/* 1. El Banner Flotante y Moderno */
+.closed-banner {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Gradiente nocturno elegante */
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 600;
+    position: fixed; /* Flotante */
+    bottom: 20px; /* Abajo para no estorbar la navegación */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    z-index: 2000;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translate(-50%, 100%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* 2. Tarjetas en "Modo Dormido" */
+.card.closed-state {
+    opacity: 0.8;
+    filter: grayscale(20%); /* Solo un poco desaturado, no total */
+    pointer-events: none; /* Bloquea clics en toda la tarjeta */
+    position: relative;
+}
+
+/* Capa oscura encima de la imagen */
+.card.closed-state .card-img-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 26, 43, 0.4); /* Azul noche semitransparente */
+    z-index: 1;
+}
+
+/* 3. Botón transformado en "Candado" o "Reloj" */
+.btn-closed-indicator {
+    background: #e0e0e0 !important;
+    color: #888 !important;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: not-allowed;
+}
 /* === HERO SECTION === */
 .hero {
   height: 50vh;
@@ -725,6 +791,14 @@ body {
   box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
 }
 
+.btn-whatsapp.disabled {
+    background-color: #bdc3c7 !important; /* Gris */
+    color: #fff;
+    cursor: not-allowed;
+    pointer-events: none; /* Bloquea clics físicos */
+    box-shadow: none;
+    transform: none;
+}
 .fab-cart {
   position: fixed;
   bottom: 30px;
