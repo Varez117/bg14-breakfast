@@ -38,16 +38,25 @@ function isRestaurantOpen() {
 }
 
 function checkScheduleVisuals() {
+    const existingBanner = document.querySelector('.closed-banner');
+    
     if (!isRestaurantOpen()) {
+        // --- CASO CERRADO ---
         document.body.classList.add('closed-business');
         
-        // Banner de cerrado
-        const existingBanner = document.querySelector('.closed-banner');
         if (!existingBanner) {
             const banner = document.createElement('div');
-            banner.innerHTML = "🌙 <b>CERRADO</b> Horario de atención: 7:30 AM a 5:00 PM";
+            // Asegúrate de cambiar el texto aquí también
+            banner.innerHTML = "🌙 <b>CERRADO</b> Horario de atención: 7:30 AM a 12:00 AM";
             banner.className = "closed-banner";
             document.body.prepend(banner);
+        }
+    } else {
+        // --- CASO ABIERTO (Agrega esto) ---
+        // Si por error quedó la clase o el banner, los quitamos
+        document.body.classList.remove('closed-business');
+        if (existingBanner) {
+            existingBanner.remove();
         }
     }
 }
@@ -360,4 +369,5 @@ function finalizeOrder() {
         btn.innerHTML = originalText;
     }, 5000);
 }
+
 
