@@ -1,0 +1,811 @@
+:root {
+  --primary: #d4a373;
+  --secondary: #faedcd;
+  --dark: #3e2723;
+  --text: #4a4a4a;
+  --white: #ffffff;
+  --red: #e53935; /* Rojo elegante */
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: var(--text);
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+
+/* === HERO SECTION === */
+.hero {
+  height: 50vh;
+  background: url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80")
+    center/cover;
+  position: relative;
+}
+.hero-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(62, 39, 35, 0.85));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+.badge {
+  background: var(--primary);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin: 0 0 10px;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  
+}
+/* Espaciado para evitar que el botón toque el texto */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     /* Crea un espacio uniforme entre elementos */
+}
+
+.btn-hero {
+    background: var(--white);
+    color: var(--dark);
+    padding: 14px 20px; /* Un poco más de cuerpo al botón */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 15px; /* Aumentamos de 25px a 35px para dar aire */
+    display: inline-block; /* Asegura que el margen funcione correctamente */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-hero:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* === NAVBAR FIXED (CORREGIDA) === */
+.category-nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  
+}
+
+.category-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 15px 20px;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-btn {
+  border: 1px solid #f1f1f1;
+  background: #fff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #888;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cat-btn.active,
+.cat-btn:hover {
+  background: var(--dark);
+  color: white;
+  border-color: var(--dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.2);
+}
+
+/* === GRID PRODUCTOS === */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 600px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Tarjeta (Corrección de Opacidad) */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* QUITAMOS OPACITY: 0 PARA EVITAR QUE DESAPAREZCAN */
+  animation: fadeInUp 0.6s ease backwards;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* BUSCA ESTA SECCIÓN EN TU CSS Y REEMPLÁZALA */
+.card-img-container { 
+    width: 100%; 
+    height: 220px; 
+    background-color: #f0f0f0; 
+    position: relative; 
+    overflow: hidden; 
+    
+    /* Agregado para centrar el icono de respaldo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* AGREGA ESTA CLASE NUEVA */
+.no-image-icon {
+    font-size: 4rem; /* Icono grande */
+    color: #d1d1d1;  /* Gris suave */
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-title {
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+  color: var(--dark);
+  font-weight: 700;
+}
+.card-ing {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.add-btn {
+  background: var(--dark);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.add-btn:hover {
+  background: var(--primary);
+  transform: rotate(90deg);
+}
+
+/* === MODALES === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  padding: 20px;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  transform: translateY(30px) scale(0.95);
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+}
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  color: var(--dark);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover {
+  background: var(--red);
+  color: white;
+  transform: rotate(90deg);
+}
+
+#modal-body {
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+.modal-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.modal-info {
+  padding: 25px 25px 10px;
+}
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.1;
+}
+.modal-price-base {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 500;
+}
+
+
+/* === OVERLAY (FONDO OSCURO PARA MODALES) === */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Negro al 60% de transparencia */
+    z-index: 998; /* Justo detrás de los modales (que suelen ser 999 o 1000) */
+    display: none; /* Oculto por defecto */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px); /* Opcional: desenfoca un poco el fondo */
+}
+
+#modal-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Aseguramos que los modales estén por encima del overlay */
+.modal-content, .cart-modal, .payment-modal-content {
+    z-index: 999; /* Mayor que el overlay */
+    position: relative;
+}
+
+/* Opciones */
+.options-container {
+  padding: 0 25px;
+  margin-top: 15px;
+}
+.option-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+.option-btn {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.option-btn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.option-check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  color: #555;
+  transition: 0.2s;
+  background: #fff;
+}
+.option-btn input:checked ~ .option-check {
+  border-color: var(--primary);
+  background: #fffbf2;
+  color: var(--dark);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.15);
+}
+
+/* Footer Modal */
+.modal-footer {
+  padding: 20px 25px;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+.notes-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+  display: block;
+}
+.note-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: none;
+  margin-bottom: 20px;
+  background: #fcfcfc;
+  transition: 0.3s;
+}
+.note-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.price-display {
+  display: flex;
+  flex-direction: column;
+}
+.price-display small {
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+}
+#modal-total-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.btn-confirm-add {
+  flex: 1;
+  padding: 15px;
+  background: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 5px 15px rgba(62, 39, 35, 0.2);
+}
+.btn-confirm-add:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* === SIDEBAR CARRITO === */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 90%;
+  max-width: 400px;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+}
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-header {
+  padding: 25px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.cart-header h3 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 1.3rem;
+}
+.cart-close-btn {
+  background: #f5f5f5;
+  color: var(--dark);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.cart-close-btn:hover {
+  background: var(--red);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.cart-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background: white;
+  transition: 0.2s;
+}
+.cart-item:hover {
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+
+/* === ESTILOS FALTANTES DEL MODAL DE PAGO === */
+
+.payment-body {
+    padding: 30px 25px;
+     /* Espacio interno para que no pegue con los bordes */
+}
+
+.payment-info-box {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.payment-info-box p {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-info-box hr {
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin: 10px 0;
+}
+
+.highlight-key {
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: var(--dark);
+    background: #faedcd;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.total-pay {
+    font-size: 1.2rem;
+    color: var(--dark);
+    font-weight: 700;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.payment-alert {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #742a2a;
+    background-color: #fee0e0;
+    border: 1px solid #fba2a2;
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.4;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+/* Nuevo estilo para el mensaje pequeño */
+.reference-explainer {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--dark);
+    margin-top: 4px;
+    font-style: italic;
+}
+.contact-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.phone-link {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+/* BOTÓN BORRAR (BOTE DE BASURA ROJO) */
+.remove-btn {
+  color: var(--red);
+  background: rgba(229, 57, 53, 0.1);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.remove-btn:hover {
+  background: var(--red);
+  color: white;
+  transform: scale(1.1);
+}
+
+.cart-footer {
+  padding: 30px;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+.input-field {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-family: inherit;
+  background: white;
+}
+.custom-select {
+  width: 100%;
+  padding: 15px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-family: inherit;
+  color: var(--dark);
+  cursor: pointer;
+}
+.btn-whatsapp {
+  width: 100%;
+  padding: 16px;
+  background: #25d366;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  transition: 0.3s;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
+}
+
+.fab-cart {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--dark);
+  color: white;
+  border: none;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  z-index: 800;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.fab-cart:hover {
+  transform: scale(1.1);
+}
+.badge-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--red);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* === TOAST SUAVE === */
+#toast-container {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+}
+.toast {
+  background: rgba(30, 30, 30, 0.95);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: toastEnter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.toast.hiding {
+  animation: toastExit 0.4s forwards;
+}
+
+@keyframes toastEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes toastExit {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

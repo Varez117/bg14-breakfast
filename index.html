@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BG-14 | Menú Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <span class="badge">Restaurante</span>
+                <h1>BG-14</h1>
+                <p>Sabor auténtico en cada bocado</p>
+                <a href="#menu-start" class="btn-hero">Ver Menú</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="category-nav-container">
+        <div class="category-scroll">
+            <button class="cat-btn active" onclick="renderMenu('all', this)"><i class="fas fa-th"></i> Todo</button>
+            <button class="cat-btn" onclick="renderMenu('desayuno', this)"><i class="fas fa-egg"></i> Desayunos</button>
+            <button class="cat-btn" onclick="renderMenu('comida', this)"><i class="fas fa-utensils"></i> Comidas</button>
+            <button class="cat-btn" onclick="renderMenu('bebida', this)"><i class="fas fa-coffee"></i> Bebidas</button>
+            <button class="cat-btn" onclick="renderMenu('postre', this)"><i class="fas fa-ice-cream"></i> Postres</button>
+        </div>
+    </nav>
+
+    <div id="menu-start"></div>
+
+    <main class="container">
+        <div class="menu-grid" id="menu-grid"></div>
+    </main>
+
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div id="modal-body"></div>
+            <div class="modal-footer">
+                <label class="notes-label"><i class="fas fa-pen-fancy" style="color:#d4a373;"></i> Notas:</label>
+                <textarea id="product-note" class="note-input" placeholder="Ej. Sin cebolla, salsa aparte..." rows="2"></textarea>
+                <div class="modal-actions">
+                    <div class="price-display">
+                        <small>Total:</small>
+                        <span id="modal-total-price">$0</span>
+                    </div>
+                    <button class="btn-confirm-add" onclick="confirmAddToCart()">Agregar <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content" style="max-width: 450px;">
+            <button class="modal-close" onclick="closePaymentModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="payment-body">
+                <div style="text-align: center; margin-bottom: 0px;">
+                    <i class="fas fa-mobile-alt" style="font-size: 3rem; color: #d4a373;"></i>
+                    <h2 style="margin: 10px 0; color: #3e2723;">Transferencia</h2>
+                </div>
+
+                <div class="payment-info-box">
+                    <p>
+                        <strong>Concepto:</strong>
+                        <span id="order-key-display" class="highlight-key">---</span>
+                    </p>
+                    <small class="reference-explainer">(Con esta identificamos tu pedido)</small>
+                    <hr>
+                    
+                    <p><strong>Banco:</strong> Spin by Oxxo</p>
+                    <p><strong>Cuenta:</strong> 7289 6900 0020 6569 83</p>
+                    <p><strong>Nombre:</strong> BG-14 Desayunador</p>
+                    <hr>
+                    <p class="total-pay">A pagar: <span id="payment-total-display">$0.00</span></p>
+                    
+                    <div class="payment-alert">
+                        <i class="fas fa-file-invoice-dollar"></i> Adjuntar el recibo de transferencia para que tu pedido sea preparado.
+                    </div>
+                </div>
+
+                <button class="btn-whatsapp" onclick="finalizeOrder()" style="width:100%; margin-top:15px;">
+                    Enviar Pedido y Comprobante <i class="fab fa-whatsapp"></i>
+                </button>
+                
+                <div class="contact-footer">
+                    <p>¿Diferente método de pago? Llama al desayunador:</p>
+                    <a href="tel:5212414073434" class="phone-link">241 407 3434</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-receipt"></i> Tu Orden</h3>
+            <button onclick="toggleCart()" class="cart-close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="cart-items" class="cart-body"></div>
+        <div class="cart-footer">
+            <div class="total-row"><span>Total:</span><span id="cart-total">$0.00</span></div>
+            <div class="form-group">
+                <input type="text" id="client-name" class="input-field" placeholder="Tu Nombre (mín. 5 letras)" maxlength="30" autocomplete="off">
+            </div>
+            
+            <div class="custom-select-wrapper">
+                 <select id="order-type" class="custom-select">
+                     <option value="Para Comer Aquí">🍽️ Para Comer Aquí</option>
+                     <option value="Para Llevar">🥡 Para Llevar</option>
+                 </select>
+                 <i class="fas fa-chevron-down custom-select-arrow"></i>
+            </div>
+            
+            <button onclick="processPaymentStep()" class="btn-whatsapp">Continuar <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <button class="fab-cart" onclick="toggleCart()">
+        <i class="fas fa-shopping-basket"></i>
+        <span id="cart-count" class="badge-count">0</span>
+    </button>
+    <div id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
