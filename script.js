@@ -1,7 +1,15 @@
 let products = [];
-let cart = [];
+// Intenta leer el carrito guardado, si no existe, inicia vacío
+let cart = JSON.parse(localStorage.getItem('myRestaurantCart')) || [];
 let currentProduct = null;
 let currentOrderKey = ""; 
+
+// === INICIALIZACIÓN ===
+document.addEventListener('DOMContentLoaded', () => {
+    loadProducts();
+    checkScheduleVisuals(); // Verifica horario al cargar
+    updateCartDisplay(); // Muestra el carrito si había algo guardado
+});
 
 async function loadProducts() {
     try {
@@ -14,6 +22,37 @@ async function loadProducts() {
     }
 }
 
+// === LÓGICA DE HORARIOS ===
+function isRestaurantOpen() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    // 7:30 AM = 450 minutos
+    // 5:00 PM (17:00) = 1020 minutos
+    const currentMinutes = (hours * 60) + minutes;
+    const openTime = 450;  
+    const closeTime = 1020; 
+
+    return currentMinutes >= openTime && currentMinutes < closeTime;
+}
+
+function checkScheduleVisuals() {
+    if (!isRestaurantOpen()) {
+        document.body.classList.add('closed-business');
+        
+        // Banner de cerrado
+        const existingBanner = document.querySelector('.closed-banner');
+        if (!existingBanner) {
+            const banner = document.createElement('div');
+            banner.innerHTML = "🌙 <b>CERRADO</b> Horario de atención: 7:30 AM a 5:00 PM";
+            banner.className = "closed-banner";
+            document.body.prepend(banner);
+        }
+    }
+}
+
+// === RENDERIZADO DEL MENÚ ===
 function renderMenu(filter = 'all', btnElement = null) {
     if (btnElement) {
         document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
@@ -23,6 +62,9 @@ function renderMenu(filter = 'all', btnElement = null) {
     grid.innerHTML = '';
     const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
 
+    // Verificamos si está abierto UNA sola vez antes del bucle
+    const isOpen = isRestaurantOpen(); 
+
     if(filtered.length === 0) {
         grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; color:#999;">No hay productos.</p>';
         return;
@@ -30,12 +72,28 @@ function renderMenu(filter = 'all', btnElement = null) {
 
     filtered.forEach((p, index) => {
         const card = document.createElement('div');
-        card.className = 'card';
+        
+        // Si está cerrado, añadimos la clase especial a la tarjeta
+        card.className = isOpen ? 'card' : 'card closed-state';
         card.style.animationDelay = `${index * 0.05}s`; 
         
         let imgContent = (p.img && p.img.trim() !== "") 
             ? `<img src="${p.img}" class="card-img" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\\'fas fa-utensils no-image-icon\\'></i>'">`
             : `<i class="fas fa-utensils no-image-icon"></i>`;
+
+        // Lógica del botón: Si está abierto es botón (+), si está cerrado es un icono de reloj
+        let actionButton;
+        if (isOpen) {
+            actionButton = `
+                <button class="add-btn" onclick="openProductModal(${p.id})">
+                    <i class="fas fa-plus"></i>
+                </button>`;
+        } else {
+            actionButton = `
+                <div class="btn-closed-indicator">
+                    <i class="fas fa-clock"></i>
+                </div>`;
+        }
 
         card.innerHTML = `
             <div class="card-img-container">${imgContent}</div>
@@ -44,17 +102,21 @@ function renderMenu(filter = 'all', btnElement = null) {
                 <p class="card-ing">${p.desc}</p>
                 <div class="card-footer">
                     <span class="price">$${p.price}</span>
-                    <button class="add-btn" onclick="openProductModal(${p.id})">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    ${actionButton}
                 </div>
             </div>
         `;
         grid.appendChild(card);
     });
 }
-
+// === MODAL DE PRODUCTO ===
 function openProductModal(id) {
+    // 1. Verificar Horario
+    if (!isRestaurantOpen()) {
+        showToast("🌙 Cerrado. Horario: 7:30 AM - 5:00 PM", "error");
+        return;
+    }
+
     currentProduct = products.find(p => p.id === id);
     if (!currentProduct) return;
 
@@ -111,6 +173,7 @@ function closeModal() {
     currentProduct = null;
 }
 
+// === CARRITO ===
 function confirmAddToCart() {
     if (!currentProduct) return;
     let selectedOptionName = null;
@@ -172,6 +235,9 @@ function updateCartDisplay() {
         const total = cart.reduce((acc, item) => acc + item.finalPrice, 0);
         totalElement.innerText = `$${total.toFixed(2)}`;
     }
+    
+    // Guardar en la memoria del navegador cada vez que cambia
+    localStorage.setItem('myRestaurantCart', JSON.stringify(cart));
 }
 
 function toggleCart() {
@@ -179,6 +245,7 @@ function toggleCart() {
     document.getElementById('cart-overlay').classList.toggle('open');
 }
 
+// === UTILIDADES ===
 function showToast(msg, type = 'success') {
     const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
@@ -190,7 +257,7 @@ function showToast(msg, type = 'success') {
     
     setTimeout(() => {
         toast.classList.add('hiding');
-        setTimeout(() => toast.remove(), 300); // 400ms para fadeOut
+        setTimeout(() => toast.remove(), 300); 
     }, 2000);
 }
 
@@ -200,6 +267,7 @@ function animateFab() {
     setTimeout(() => fab.style.transform = "scale(1) rotate(0)", 200);
 }
 
+// === PROCESO DE PAGO ===
 function generateOrderKey(name) {
     const now = new Date();
     const day = String(now.getDate()).padStart(2, '0');
@@ -209,6 +277,12 @@ function generateOrderKey(name) {
 }
 
 function processPaymentStep() {
+    // Verificar horario también antes de pagar
+    if (!isRestaurantOpen()) {
+        showToast("🌙 Cerrado. Horario: 7:30 AM - 5:00 PM", "error");
+        return;
+    }
+    
     let name = document.getElementById('client-name').value.trim();
     if (cart.length === 0) return showToast(" Carrito vacío", 'error');
     if (!name || name.length < 5) return showToast(" Nombre inválido", 'error');
@@ -227,11 +301,29 @@ function closePaymentModal() {
 }
 
 function finalizeOrder() {
+    const btn = document.querySelector('.btn-whatsapp'); 
+    
+    // 1. ANTI-SPAM
+    if (btn.classList.contains('disabled')) return;
+
     let name = document.getElementById('client-name').value.trim();
+    
+    // 2. SEGURIDAD: Saneamiento
+    name = name.replace(/[^\w\sñÑáéíóúÁÉÍÓÚ]/gi, ''); 
+
+    if (!name || name.length < 5) {
+        return showToast("⚠️ Nombre inválido (mín. 5 letras)", 'error');
+    }
+
     const orderType = document.getElementById('order-type').value;
     const phone = "5212414073434"; 
 
-    let message = `*PEDIDO BG-14* 🍽️%0A`;
+    // 3. UX: Bloquear botón
+    btn.classList.add('disabled');
+    const originalText = btn.innerHTML; 
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abriendo WhatsApp...';
+
+    let message = `*PEDIDO BG-14* %0A`;
     message += `*Referencia:* ${currentOrderKey}%0A`;
     message += `*Cliente:* ${name}%0A`;
     message += `*Tipo:* ${orderType}%0A`;
@@ -240,24 +332,31 @@ function finalizeOrder() {
     cart.forEach((item, index) => {
         message += `*${index + 1}. ${item.name}* - $${item.finalPrice}%0A`;
         if(item.selectedOption) message += `   ↳ _Opción: ${item.selectedOption}_%0A`;
-        if(item.note) message += `   ↳ _Nota: ${item.note}_%0A`;
+        if(item.note) {
+            let cleanNote = item.note.replace(/[^\w\sñÑáéíóúÁÉÍÓÚ.,-]/gi, '');
+            message += `   ↳ _Nota: ${cleanNote}_%0A`;
+        }
     });
 
     const total = cart.reduce((acc, item) => acc + item.finalPrice, 0);
     message += `----------------------------------%0A`;
     message += `*TOTAL: $${total.toFixed(2)}* (Adjunto Comprobante)`;
 
-    // 1. Abrir WhatsApp
+    // 4. Abrir WhatsApp
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     
-    // 2. Limpiar Sistema
+    // 5. Limpieza del Sistema
     cart = [];
+    localStorage.removeItem('myRestaurantCart'); // Borrar memoria
     updateCartDisplay();
     closePaymentModal();
     document.getElementById('client-name').value = ''; 
     
-    // 3. Confirmación visual
-    showToast("Pedido enviado y carrito limpio");
-}
+    showToast("✅ Pedido procesado correctamente");
 
-document.addEventListener('DOMContentLoaded', loadProducts);
+    // 6. Reactivar botón después de 5 segundos
+    setTimeout(() => {
+        btn.classList.remove('disabled');
+        btn.innerHTML = originalText;
+    }, 5000);
+}
