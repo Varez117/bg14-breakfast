@@ -862,6 +862,21 @@ body {
 
 /* 1. DISPOSITIVOS MÓVILES (Smartphones como Redmi, iPhone, etc.) */
 @media (max-width: 600px) {
+  /* Dentro de @media (max-width: 600px) */
+
+    .category-scroll {
+        /* ESTA es la clave: alinea los items a la izquierda en lugar del centro */
+        justify-content: flex-start !important; 
+        
+        /* Asegura que el scroll funcione horizontalmente */
+        overflow-x: auto;
+        
+        /* Un poco de aire a los lados para que el primer y último botón no se peguen al borde */
+        padding: 15px 20px; 
+        
+        /* Opcional: Oculta la barra de scroll fea en Chrome/Safari */
+        -webkit-overflow-scrolling: touch; 
+    }
     .hero {
         height: 60vh; /* Un poco más alto para que luzca la imagen */
     }
@@ -951,5 +966,6 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
