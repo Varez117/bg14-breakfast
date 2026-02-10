@@ -856,31 +856,72 @@ body {
   animation: toastExit 0.4s forwards;
 }
 /* Ajustes para móviles (Redmi Note 14 y similares) */
+/* ==========================================
+   RESPONSIVE DESIGN (Multi-resolución)
+   ========================================== */
+
+/* 1. DISPOSITIVOS MÓVILES (Smartphones como Redmi, iPhone, etc.) */
 @media (max-width: 600px) {
-    /* Reducimos el tamaño del texto para que no desborde */
+    .hero {
+        height: 60vh; /* Un poco más alto para que luzca la imagen */
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
+        font-size: 2.8rem; /* Ajuste para que no desborde */
     }
 
-    /* Aseguramos que el contenedor de categorías no se rompa */
     .category-scroll {
-        justify-content: flex-start; /* Permite el scroll lateral natural */
-        padding: 10px;
+        justify-content: flex-start; /* Permite scroll lateral */
+        padding: 10px 15px;
     }
 
-    /* Hacemos que las tarjetas de comida ocupen más espacio visual */
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    /* Tarjetas en una sola columna para que se vean grandes y claras */
     .menu-grid {
-        grid-template-columns: 1fr; /* Una sola columna para que se vea grande */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
 
+    .card-img-container {
+        height: 240px; /* Imagen más protagónica */
+    }
+
+    /* Modales a pantalla casi completa para mejor UX táctil */
     .modal-content {
         width: 95%;
-        max-height: 90vh;
+        max-height: 95vh;
+    }
+
+    .modal-actions {
+        flex-direction: column; /* Botón de agregar abajo del precio */
+        gap: 10px;
+    }
+
+    .btn-confirm-add {
+        width: 100%;
+    }
+}
+
+/* 2. TABLETS (iPad, Tablets Android en vertical) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* 3. PANTALLAS GRANDES (Laptops y Monitores) */
+@media (min-width: 1025px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas */
     }
 }
 @keyframes toastEnter {
@@ -910,4 +951,5 @@ body {
     transform: translateY(0);
   }
 }
+
 
