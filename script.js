@@ -32,7 +32,7 @@ function isRestaurantOpen() {
     // 5:00 PM (17:00) = 1020 minutos
     const currentMinutes = (hours * 60) + minutes;
     const openTime = 450;  
-    const closeTime = 1020; 
+    const closeTime = 1420; 
 
     return currentMinutes >= openTime && currentMinutes < closeTime;
 }
@@ -369,5 +369,6 @@ function finalizeOrder() {
         btn.innerHTML = originalText;
     }, 5000);
 }
+
 
 
