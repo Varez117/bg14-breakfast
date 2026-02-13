@@ -95,12 +95,12 @@ body {
 /* === HERO SECTION === */
 .hero {
   height: 50vh;
-  background: url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80")
+  background: url("src\\img\\bggourmet.jpeg")
     center/cover;
   position: relative;
 }
 .hero-overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(62, 39, 35, 0.85));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(62, 39, 35, 0.9));
   height: 100%;
   display: flex;
   align-items: center;
@@ -253,7 +253,7 @@ body {
 
 /* AGREGA ESTA CLASE NUEVA */
 .no-image-icon {
-    font-size: 4rem; /* Icono grande */
+    font-size: 3rem; /* Icono grande */
     color: #d1d1d1;  /* Gris suave */
 }
 .card-img {
