@@ -1,362 +1,246 @@
 [
   {
     "id": 1,
-    "name": "Hot Cakes",
-    "price": 85,
+    "name": "Hot Cakes Especiales",
+    "price": 45,
     "cat": "desayuno",
-    "desc": "3 piezas esponjosas con mantequilla, miel de maple y fruta.",
+    "desc": "3pz con miel, chocolate, mermelada, fruta o yogurt.",
     "img": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=500",
-    "options": []
+    "options": [
+      { "name": "Miel", "extra": 0 },
+      { "name": "Chocolate", "extra": 0 },
+      { "name": "Mermelada", "extra": 10 },
+      { "name": "Fruta con Yogurt", "extra": 15 }
+    ]
   },
   {
     "id": 2,
-    "name": "Croissant",
-    "price": 55,
-    "cat": "desayuno",
-    "desc": "Horneado al día, elige tu relleno favorito.",
-    "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500",
-    "options": [{"name": "Jamón y Queso", "extra": 0}, {"name": "Pollo", "extra": 0}, {"name": "Tocino Extra", "extra": 15}]
-  },
-  {
-    "id": 4,
-    "name": "Coctel de Fruta",
-    "price": 60,
-    "cat": "desayuno",
-    "desc": "Fruta de temporada con yogurt y granola.",
-    "img": "https://images.unsplash.com/photo-1511690656952-34342d5c2895?w=500",
-    "options": [{"name": "Yogurt Natural", "extra": 0}, {"name": "Yogurt Fresa", "extra": 0}, {"name": "Miel Extra", "extra": 10}]
-  },
-  {
-    "id": 5,
-    "name": "Cereal",
-    "price": 45,
-    "cat": "desayuno",
-    "desc": "Tazón de cereal clásico con leche y plátano.",
-    "img": "https://images.unsplash.com/photo-1588611910674-633092b76ce8?w=500",
-    "options": [{"name": "Leche Entera", "extra": 0}, {"name": "Leche Deslactosada", "extra": 5}, {"name": "Leche Almendra", "extra": 10}]
-  },
-  {
-    "id": 10,
     "name": "Chilaquiles",
-    "price": 110,
-    "cat": "desayuno",
-    "desc": "Totopos bañados en salsa, con crema, queso y cebolla.",
-    "img": "https://images.unsplash.com/photo-1640719028782-93300dc0f820?w=500",
-    "options": [{"name": "Sencillos", "extra": 0}, {"name": "Con Pollo", "extra": 20}, {"name": "Con Huevo", "extra": 15}, {"name": "Con Bistec", "extra": 30}]
-  },
-  {
-    "id": 14,
-    "name": "Huevos al Gusto",
-    "price": 90,
-    "cat": "desayuno",
-    "desc": "Dos huevos acompañados de frijoles refritos y tortillas.",
-    "img": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500",
-    "options": [{"name": "Jamón", "extra": 0}, {"name": "Salchicha", "extra": 0}, {"name": "A la Mexicana", "extra": 0}, {"name": "Tocino", "extra": 15}]
-  },
-  {
-    "id": 101,
-    "name": "Molletes",
-    "price": 80,
-    "cat": "desayuno",
-    "desc": "Bolillo tostado con frijoles y queso gratinado, incluye pico de gallo.",
-    "img": "https://images.unsplash.com/photo-1626071466175-9c1d041a87b1?w=500",
-    "options": [{"name": "Sencillos", "extra": 0}, {"name": "Con Chorizo", "extra": 15}, {"name": "Con Jamón", "extra": 10}]
-  },
-  {
-    "id": 102,
-    "name": "Omelette",
-    "price": 105,
-    "cat": "desayuno",
-    "desc": "Huevo batido relleno de ingredientes a elección con ensalada.",
-    "img": "https://images.unsplash.com/photo-1510693206972-df098062cb71?w=500",
-    "options": [{"name": "Espinaca y Queso", "extra": 0}, {"name": "Champiñones", "extra": 0}, {"name": "Jamón y Queso", "extra": 0}]
-  },
-  {
-    "id": 103,
-    "name": "Pan Francés",
-    "price": 95,
-    "cat": "desayuno",
-    "desc": "Pan brioche rebozado con canela y frutos rojos.",
-    "img": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500",
-    "options": [{"name": "Miel Maple", "extra": 0}, {"name": "Leche Condensada", "extra": 5}, {"name": "Nutella", "extra": 15}]
-  },
-  {
-    "id": 104,
-    "name": "Avena Caliente",
     "price": 55,
     "cat": "desayuno",
-    "desc": "Avena cocida con leche, canela y manzana.",
-    "img": "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=500",
-    "options": [{"name": "Leche Entera", "extra": 0}, {"name": "Leche Coco", "extra": 10}, {"name": "Nuez Extra", "extra": 10}]
+    "desc": "Rojos o verdes con carne asada o milanesa.",
+    "img": "https://images.unsplash.com/photo-1640719028782-93300dc0f820?w=500",
+    "options": [
+      { "name": "Salsa Roja", "extra": 0 },
+      { "name": "Salsa Verde", "extra": 0 },
+      { "name": "Verde/Carne Asada", "extra": 10 },
+      { "name": "Verde/Milanesa", "extra": 10 },
+      { "name": "Rojo/Carne Asada", "extra": 10 },
+      { "name": "Rojo/Milanesa", "extra": 10 }
+    ]
   },
   {
     "id": 3,
-    "name": "Sándwich",
-    "price": 75,
-    "cat": "comida",
-    "desc": "Jamón, queso manchego, lechuga, jitomate y aguacate.",
-    "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500",
-    "options": [{"name": "Pan Blanco", "extra": 0}, {"name": "Pan Integral", "extra": 5}, {"name": "Papas Fritas", "extra": 25}]
-  },
-  {
-    "id": 8,
-    "name": "Enchiladas Suizas",
-    "price": 135,
-    "cat": "comida",
-    "desc": "Salsa verde cremosa con extra queso gratinado.",
-    "img": "https://images.unsplash.com/photo-1534352956279-b4238ad72214?w=500",
-    "options": [{"name": "Pollo Deshebrado", "extra": 0}, {"name": "Bistec Asado", "extra": 30}, {"name": "Milanesa Pollo", "extra": 30}]
-  },
-  {
-    "id": 12,
-    "name": "Tacos Asada",
-    "price": 130,
-    "cat": "comida",
-    "desc": "Orden de 4 tacos de bistec marinado.",
-    "img": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=500",
-    "options": [{"name": "Tortilla Maíz", "extra": 0}, {"name": "Tortilla Harina", "extra": 10}, {"name": "Con Costra Queso", "extra": 25}]
-  },
-  {
-    "id": 201,
-    "name": "Hamburguesa Clásica",
-    "price": 145,
-    "cat": "comida",
-    "desc": "Carne de res 200g, queso americano, lechuga y tomate con papas.",
-    "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500",
-    "options": [{"name": "Término Medio", "extra": 0}, {"name": "3/4", "extra": 0}, {"name": "Bien Cocida", "extra": 0}, {"name": "Tocino Extra", "extra": 20}]
-  },
-  {
-    "id": 202,
-    "name": "Pechuga a la Plancha",
-    "price": 125,
-    "cat": "comida",
-    "desc": "Pechuga de pollo marinada acompañada de ensalada y arroz.",
-    "img": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500",
-    "options": [{"name": "Natural", "extra": 0}, {"name": "Empanizada", "extra": 15}, {"name": "Al Ajillo", "extra": 10}]
-  },
-  {
-    "id": 203,
-    "name": "Sopa de Tortilla",
-    "price": 85,
-    "cat": "comida",
-    "desc": "Caldillo de tomate con julianas de tortilla, aguacate, crema y queso.",
-    "img": "https://images.unsplash.com/photo-1594756202469-9ff9799b3e4f?w=500",
-    "options": [{"name": "Chico", "extra": 0}, {"name": "Grande", "extra": 20}]
-  },
-  {
-    "id": 204,
-    "name": "Ensalada César",
-    "price": 115,
-    "cat": "comida",
-    "desc": "Lechuga orejona, crutones, queso parmesano y aderezo césar.",
-    "img": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500",
-    "options": [{"name": "Sin Proteína", "extra": 0}, {"name": "Con Pollo", "extra": 25}, {"name": "Con Camarón", "extra": 45}]
-  },
-  {
-    "id": 205,
-    "name": "Pasta Alfredo",
-    "price": 140,
-    "cat": "comida",
-    "desc": "Fettuccine en salsa cremosa de queso parmesano.",
-    "img": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=500",
-    "options": [{"name": "Sola", "extra": 0}, {"name": "Con Pollo", "extra": 30}, {"name": "Con Camarón", "extra": 50}]
-  },
-  {
-    "id": 206,
-    "name": "Burrito Norteño",
-    "price": 120,
-    "cat": "comida",
-    "desc": "Tortilla de harina gigante rellena de guiso, frijoles y arroz.",
-    "img": "https://images.unsplash.com/photo-1566740933430-b5e70b06d2d5?w=500",
-    "options": [{"name": "Pastor", "extra": 0}, {"name": "Bistec", "extra": 10}, {"name": "Campechano", "extra": 15}]
-  },
-  {
-    "id": 207,
-    "name": "Fajitas Mixtas",
-    "price": 160,
-    "cat": "comida",
-    "desc": "Tiras de res y pollo con pimientos y cebolla asada.",
-    "img": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=500",
-    "options": [{"name": "Solo Pollo", "extra": -10}, {"name": "Mixtas", "extra": 0}, {"name": "Solo Res", "extra": 20}]
-  },
-  {
-    "id": 40,
-    "name": "Café",
-    "price": 35,
-    "cat": "bebida",
-    "desc": "Café de grano selecto recién molido.",
-    "img": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500",
-    "options": [{"name": "Americano", "extra": 0}, {"name": "Capuchino", "extra": 15}, {"name": "Latte", "extra": 15}]
-  },
-  {
-    "id": 43,
-    "name": "Malteadas",
-    "price": 70,
-    "cat": "bebida",
-    "desc": "Espesas y deliciosas, con crema batida y cereza.",
-    "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500",
-    "options": [{"name": "Chocolate", "extra": 0}, {"name": "Vainilla", "extra": 0}, {"name": "Fresa", "extra": 0}, {"name": "Oreo", "extra": 15}]
-  },
-  {
-    "id": 301,
-    "name": "Jugo Natural",
+    "name": "Molletes Tradicionales",
     "price": 45,
-    "cat": "bebida",
-    "desc": "Jugo recién exprimido 400ml.",
-    "img": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500",
-    "options": [{"name": "Naranja", "extra": 0}, {"name": "Zanahoria", "extra": 0}, {"name": "Verde", "extra": 10}]
-  },
-  {
-    "id": 302,
-    "name": "Refresco",
-    "price": 35,
-    "cat": "bebida",
-    "desc": "Lata de 355ml fría.",
-    "img": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500",
-    "options": [{"name": "Coca Cola", "extra": 0}, {"name": "Sprite", "extra": 0}, {"name": "Manzana", "extra": 0}]
-  },
-  {
-    "id": 303,
-    "name": "Agua Fresca",
-    "price": 40,
-    "cat": "bebida",
-    "desc": "Agua de fruta natural del día 500ml.",
-    "img": "https://images.unsplash.com/photo-1556710807-a9261921475f?w=500",
-    "options": [{"name": "Horchata", "extra": 0}, {"name": "Jamaica", "extra": 0}, {"name": "Limón", "extra": 0}]
-  },
-  {
-    "id": 304,
-    "name": "Té Chai",
-    "price": 60,
-    "cat": "bebida",
-    "desc": "Mezcla de especias con leche espumada.",
-    "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500",
-    "options": [{"name": "Caliente", "extra": 0}, {"name": "Frío", "extra": 0}, {"name": "Leche Almendra", "extra": 10}]
-  },
-  {
-    "id": 305,
-    "name": "Chocolate Caliente",
-    "price": 55,
-    "cat": "bebida",
-    "desc": "Chocolate abuelita espumoso.",
-    "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500",
-    "options": [{"name": "Clásico", "extra": 0}, {"name": "Con Bombones", "extra": 10}]
-  },
-  {
-    "id": 306,
-    "name": "Limonada",
-    "price": 45,
-    "cat": "bebida",
-    "desc": "Jugo de limón, azúcar y hielo.",
-    "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500",
-    "options": [{"name": "Mineral", "extra": 0}, {"name": "Natural", "extra": 0}, {"name": "Con Pepino", "extra": 10}]
-  },
-  {
-    "id": 307,
-    "name": "Smoothie Verde",
-    "price": 70,
-    "cat": "bebida",
-    "desc": "Espinaca, piña, apio y jugo de naranja.",
-    "img": "https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=500",
+    "cat": "desayuno",
+    "desc": "Tradicionales con frijoles, queso y pico de gallo.",
+    "img": "https://images.unsplash.com/photo-1626071466175-9c1d041a87b1?w=500",
     "options": []
   },
   {
-    "id": 308,
-    "name": "Frappé Moka",
-    "price": 75,
-    "cat": "bebida",
-    "desc": "Café, chocolate, hielo y crema batida.",
-    "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500",
-    "options": [{"name": "Leche Entera", "extra": 0}, {"name": "Leche Light", "extra": 0}]
-  },
-  {
-    "id": 60,
-    "name": "Helado",
-    "price": 45,
-    "cat": "postre",
-    "desc": "Dos bolas de helado artesanal.",
-    "img": "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=500",
-    "options": [{"name": "Limón", "extra": 0}, {"name": "Vainilla", "extra": 0}, {"name": "Chocolate", "extra": 0}]
-  },
-  {
-    "id": 61,
-    "name": "Carlota de Limón",
+    "id": 4,
+    "name": "Molletes Preparados",
     "price": 55,
+    "cat": "desayuno",
+    "desc": "Acompañados con ingrediente a elección.",
+    "img": "https://images.unsplash.com/photo-1626071466175-9c1d041a87b1?w=500",
+    "options": [
+      { "name": "Pepperoni", "extra": 0 },
+      { "name": "Salchicha", "extra": 0 },
+      { "name": "Chorizo", "extra": 0 },
+      { "name": "Jamón", "extra": 0 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Huevos al Gusto",
+    "price": 55,
+    "cat": "desayuno",
+    "desc": "Preparados a tu elección.",
+    "img": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500",
+    "options": []
+  },
+  {
+    "id": 6,
+    "name": "Cereal con Leche",
+    "price": 40,
+    "cat": "desayuno",
+    "desc": "Cereal con leche y fruta.",
+    "img": "https://images.unsplash.com/photo-1588611910674-633092b76ce8?w=500",
+    "options": []
+  },
+  {
+    "id": 7,
+    "name": "Fruta con Yogurt",
+    "price": 40,
+    "cat": "desayuno",
+    "desc": "Plato de fruta fresca con yogurt.",
+    "img": "https://images.unsplash.com/photo-1511690656952-34342d5c2895?w=500",
+    "options": []
+  },
+  {
+    "id": 8,
+    "name": "Croissant Dulce",
+    "price": 35,
+    "cat": "desayuno",
+    "desc": "Relleno dulce con fruta.",
+    "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500",
+    "options": []
+  },
+  {
+    "id": 9,
+    "name": "Croissant Salado",
+    "price": 40,
+    "cat": "desayuno",
+    "desc": "Relleno de jamón.",
+    "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500",
+    "options": []
+  },
+  {
+    "id": 10,
+    "name": "Tortas",
+    "price": 35,
+    "cat": "comida",
+    "desc": "Elige tu especialidad favorita.",
+    "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500",
+    "options": [
+      { "name": "Jamón", "extra": 0 },
+      { "name": "Salchicha", "extra": 10 },
+      { "name": "Milanesa", "extra": 10 },
+      { "name": "Huevo con Jamón", "extra": 15 },
+      { "name": "Huevo con Salchicha", "extra": 15 },
+      { "name": "Cubana", "extra": 20 }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Sándwiches",
+    "price": 35,
+    "cat": "comida",
+    "desc": "Preparado con los ingredientes frescos.",
+    "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500",
+    "options": [
+      { "name": "Jamón", "extra": 0 },
+      { "name": "Salchicha", "extra": 5 },
+      { "name": "Milanesa", "extra": 10 },
+      { "name": "Pechuga Asada", "extra": 10 }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Pechuga Finas Hierbas",
+    "price": 55,
+    "cat": "comida",
+    "desc": "Pechuga sazonada acompañada con ensalada.",
+    "img": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500",
+    "options": []
+  },
+  {
+    "id": 19,
+    "name": "Milanesa",
+    "price": 55,
+    "cat": "comida",
+    "desc": "Empanizada acompañada con ensalada.",
+    "img": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500",
+    "options": []
+  },
+  {
+    "id": 20,
+    "name": "Bistec",
+    "price": 55,
+    "cat": "comida",
+    "desc": "Asado acompañado con ensalada.",
+    "img": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=500",
+    "options": []
+  },
+  {
+    "id": 21,
+    "name": "Gelatina",
+    "price": 10,
     "cat": "postre",
-    "desc": "Postre frío de galleta y limón estilo casero.",
+    "desc": "Gelatina de sabores.",
+    "img": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500",
+    "options": [
+      { "name": "Sola", "extra": 0 },
+      { "name": "Con Yogurt", "extra": 5 }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Ensalada de Manzana",
+    "price": 25,
+    "cat": "postre",
+    "desc": "Postre de manzana dulce.",
     "img": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500",
     "options": []
   },
   {
-    "id": 401,
-    "name": "Flan Napolitano",
-    "price": 60,
+    "id": 23,
+    "name": "Helado",
+    "price": 25,
     "cat": "postre",
-    "desc": "Flan cremoso con caramelo.",
-    "img": "https://images.unsplash.com/photo-1598155523122-38423ab4d621?w=500",
+    "desc": "Bola de helado sabor a elección.",
+    "img": "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=500",
     "options": []
   },
   {
-    "id": 402,
-    "name": "Cheesecake",
-    "price": 85,
-    "cat": "postre",
-    "desc": "Rebanada de pay de queso estilo New York con jalea.",
-    "img": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500",
-    "options": [{"name": "Fresa", "extra": 0}, {"name": "Zarzamora", "extra": 0}, {"name": "Maracuyá", "extra": 5}]
+    "id": 24,
+    "name": "Café con Leche",
+    "price": 25,
+    "cat": "bebida",
+    "desc": "Caliente.",
+    "img": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500",
+    "options": []
   },
   {
-    "id": 403,
-    "name": "Brownie",
-    "price": 75,
-    "cat": "postre",
-    "desc": "Brownie de chocolate caliente con una bola de helado.",
-    "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500",
-    "options": [{"name": "Helado Vainilla", "extra": 0}, {"name": "Helado Chocolate", "extra": 0}]
+    "id": 25,
+    "name": "Té de Sobre",
+    "price": 15,
+    "cat": "bebida",
+    "desc": "Infusión caliente.",
+    "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500",
+    "options": []
   },
   {
-    "id": 404,
-    "name": "Crepas Dulces",
-    "price": 70,
-    "cat": "postre",
-    "desc": "Orden de 2 crepas con relleno dulce.",
-    "img": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=500",
-    "options": [{"name": "Nutella", "extra": 0}, {"name": "Cajeta", "extra": 0}, {"name": "Queso Crema y Mermelada", "extra": 10}]
+    "id": 26,
+    "name": "Chocolate Caliente",
+    "price": 30,
+    "cat": "bebida",
+    "desc": "Bebida caliente de chocolate.",
+    "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500",
+    "options": []
   },
   {
-    "id": 405,
-    "name": "Arroz con Leche",
+    "id": 27,
+    "name": "Licuado",
     "price": 45,
-    "cat": "postre",
-    "desc": "Tradicional con pasas y canela espolvoreada.",
-    "img": "https://images.unsplash.com/photo-1596716098197-2965ce236968?w=500",
-    "options": []
+    "cat": "bebida",
+    "desc": "Batido de leche.",
+    "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500",
+    "options": [
+      { "name": "Chocolate", "extra": 0 },
+      { "name": "Fresa", "extra": 0 },
+      { "name": "Avena", "extra": 0 }
+    ]
   },
   {
-    "id": 406,
-    "name": "Pastel de Zanahoria",
-    "price": 80,
-    "cat": "postre",
-    "desc": "Con betún de queso crema y nuez.",
-    "img": "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500",
-    "options": []
-  },
-  {
-    "id": 407,
-    "name": "Churros",
-    "price": 55,
-    "cat": "postre",
-    "desc": "Orden de 3 churros espolvoreados con azúcar y canela.",
-    "img": "https://images.unsplash.com/photo-1624372990425-e51f5c6e7fa6?w=500",
-    "options": [{"name": "Sencillos", "extra": 0}, {"name": "Dip Cajeta", "extra": 10}, {"name": "Dip Chocolate", "extra": 10}]
-  },
-  {
-    "id": 408,
-    "name": "Fresas con Crema",
-    "price": 65,
-    "cat": "postre",
-    "desc": "Fresas frescas con nuestra crema especial dulce.",
-    "img": "https://images.unsplash.com/photo-1563278972-2776c7fb6690?w=500",
-    "options": [{"name": "Granola", "extra": 0}, {"name": "Nuez", "extra": 10}]
+    "id": 28,
+    "name": "Latte de Sabores",
+    "price": 45,
+    "cat": "bebida",
+    "desc": "Caliente o Frío.",
+    "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500",
+    "options": [
+      { "name": "Choco Galleta", "extra": 0 },
+      { "name": "Algodón de Azúcar", "extra": 0 },
+      { "name": "Chocolate Blanco", "extra": 0 },
+      { "name": "Terciopelo Rojo", "extra": 0 },
+      { "name": "Java Chip", "extra": 0 },
+      { "name": "Vainilla", "extra": 0 },
+      { "name": "Fresas con Crema", "extra": 0 },
+      { "name": "Cajeta", "extra": 0 },
+      { "name": "Choco Café", "extra": 0 }
+    ]
   }
 ]
