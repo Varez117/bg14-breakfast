@@ -95,7 +95,7 @@ body {
 /* === HERO SECTION === */
 .hero {
   height: 50vh;
-  background: url("src\\img\\bggourmet.jpeg")
+  background: url("src/img/bggourmet.jpeg")
     center/cover;
   position: relative;
 }
@@ -966,6 +966,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
