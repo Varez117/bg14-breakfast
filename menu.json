@@ -4,7 +4,7 @@
     "name": "Hot Cakes",
     "price": 35,
     "cat": "desayuno",
-    "desc": "Tres clásicos hot cakes, acompañados con una porción de yogurt.",
+    "desc": "3pz con  acompañados con yogurt.",
     "img": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=500",
     "options": [
       { "name": "Miel", "extra": 0 },
@@ -18,7 +18,7 @@
     "name": "Chilaquiles",
     "price": 45,
     "cat": "desayuno",
-    "desc": "Totopos bañados en salsa roja o verde, servidos con tu elección de carne asada o milanesa.",
+    "desc": "Rojos o verdes con carne asada o milanesa.",
     "img": "https://images.unsplash.com/photo-1640719028782-93300dc0f820?w=500",
     "options": [
       { "name": "Rojo/Carne deshebrada", "extra": 0 },
@@ -34,7 +34,7 @@
     "name": "Molletes Tradicionales",
     "price": 45,
     "cat": "desayuno",
-    "desc": "Pan tostado con frijoles, queso fundido y pico de gallo.",
+    "desc": "Tradicionales con queso y pico de gallo.",
     "img": "https://images.unsplash.com/photo-1626071466175-9c1d041a87b1?w=500",
     "options": []
   },
@@ -43,7 +43,7 @@
     "name": "Molletes Preparados",
     "price": 55,
     "cat": "desayuno",
-    "desc": "Nuestros clásicos molletes con queso, coronados con tu ingrediente favorito.",
+    "desc": "Acompañados con ingrediente a elección.",
     "img": "https://images.unsplash.com/photo-1626071466175-9c1d041a87b1?w=500",
     "options": [
       { "name": "Pepperoni", "extra": 0 },
@@ -57,7 +57,7 @@
     "name": "Huevos al Gusto",
     "price": 55,
     "cat": "desayuno",
-    "desc": "Huevos preparados al momento con tu receta favorita.",
+    "desc": "Preparados a tu elección.",
     "img": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500",
     "options": []
   },
@@ -66,7 +66,7 @@
     "name": "Cereal con Leche",
     "price": 40,
     "cat": "desayuno",
-    "desc": "Tazón de cereal con leche, servido con un toque de fruta.",
+    "desc": "Cereal con leche y fruta.",
     "img": "https://images.unsplash.com/photo-1588611910674-633092b76ce8?w=500",
     "options": []
   },
@@ -75,7 +75,7 @@
     "name": "Fruta con Yogurt",
     "price": 40,
     "cat": "desayuno",
-    "desc": "Plato de fruta fresca de temporada, servida con yogurt.",
+    "desc": "Plato de fruta fresca con yogurt.",
     "img": "https://images.unsplash.com/photo-1511690656952-34342d5c2895?w=500",
     "options": []
   },
@@ -84,7 +84,7 @@
     "name": "Croissant Dulce",
     "price": 35,
     "cat": "desayuno",
-    "desc": "Croissant suave con relleno dulce, acompañado de fruta.",
+    "desc": "Relleno dulce con fruta.",
     "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500",
     "options": []
   },
@@ -93,7 +93,7 @@
     "name": "Croissant Salado",
     "price": 40,
     "cat": "desayuno",
-    "desc": "Croissant calientito y relleno de jamón.",
+    "desc": "Relleno de jamón.",
     "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500",
     "options": []
   },
@@ -102,7 +102,7 @@
     "name": "Tortas",
     "price": 35,
     "cat": "comida",
-    "desc": "Torta preparada al momento con tu ingrediente favorito.",
+    "desc": "Elige tu especialidad favorita.",
     "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500",
     "options": [
       { "name": "Jamón", "extra": 0 },
@@ -118,7 +118,7 @@
     "name": "Sándwiches",
     "price": 35,
     "cat": "comida",
-    "desc": "Sándwich clásico, preparado con ingredientes frescos al momento.",
+    "desc": "Preparado con los ingredientes frescos.",
     "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500",
     "options": [
       { "name": "Jamón", "extra": 0 },
@@ -132,7 +132,7 @@
     "name": "Pechuga Finas Hierbas",
     "price": 55,
     "cat": "comida",
-    "desc": "Pechuga de pollo a las finas hierbas, servida con ensalada fresca.",
+    "desc": "Pechuga sazonada acompañada con ensalada.",
     "img": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500",
     "options": []
   },
@@ -141,7 +141,7 @@
     "name": "Milanesa",
     "price": 55,
     "cat": "comida",
-    "desc": "Tradicional milanesa empanizada, acompañada con ensalada fresca.",
+    "desc": "Empanizada acompañada con ensalada.",
     "img": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500",
     "options": []
   },
@@ -150,7 +150,7 @@
     "name": "Bistec",
     "price": 55,
     "cat": "comida",
-    "desc": "Bistec asado a la plancha, servido con ensalada.",
+    "desc": "Asado acompañado con ensalada.",
     "img": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=500",
     "options": []
   },
@@ -159,7 +159,7 @@
     "name": "Gelatina",
     "price": 10,
     "cat": "postre",
-    "desc": "Gelatina refrescante de diferentes sabores.",
+    "desc": "Gelatina de sabores.",
     "img": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500",
     "options": [
       { "name": "Sola", "extra": 0 },
@@ -171,7 +171,7 @@
     "name": "Ensalada de Manzana",
     "price": 25,
     "cat": "postre",
-    "desc": "Tradicional ensalada dulce con trocitos de manzana fresca.",
+    "desc": "Postre de manzana dulce.",
     "img": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500",
     "options": []
   },
@@ -180,7 +180,7 @@
     "name": "Helado",
     "price": 25,
     "cat": "postre",
-    "desc": "Bola de helado en tu sabor preferido.",
+    "desc": "Bola de helado sabor a elección.",
     "img": "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=500",
     "options": []
   },
@@ -189,21 +189,19 @@
     "name": "Café",
     "price": 25,
     "cat": "bebida",
-    "desc": "Taza de café recién hecho.",
+    "desc": "Bebida caliente para mejorar el día.",
     "img": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500",
-    "options": [
-      { "name": "Normal", "extra": 0 },
+    "options": [{ "name": "Normal", "extra": 0 },
       { "name": "Con Leche", "extra": 10 },
       { "name": "Con Leche Deslactosada", "extra": 10 },
-      { "name": "Con Crema para café", "extra": 10 }
-    ]
+      { "name": "Con Crema para café", "extra": 10 }]
   },
   {
     "id": 25,
     "name": "Té de Sobre",
     "price": 15,
     "cat": "bebida",
-    "desc": "Taza de infusión caliente a tu elección.",
+    "desc": "Infusión caliente.",
     "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500",
     "options": []
   },
@@ -212,7 +210,7 @@
     "name": "Chocolate Caliente",
     "price": 30,
     "cat": "bebida",
-    "desc": "Tradicional y dulce chocolate caliente.",
+    "desc": "Bebida caliente de chocolate.",
     "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500",
     "options": []
   },
@@ -221,7 +219,7 @@
     "name": "Licuado",
     "price": 45,
     "cat": "bebida",
-    "desc": "Batido de leche preparado al momento en tu sabor favorito.",
+    "desc": "Batido de leche.",
     "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500",
     "options": [
       { "name": "Chocolate", "extra": 0 },
@@ -234,7 +232,7 @@
     "name": "Latte de Sabores",
     "price": 45,
     "cat": "bebida",
-    "desc": "Bebida dulce a base de leche y sabor a elección, disfrútala fría o caliente.",
+    "desc": "Caliente o Frío.",
     "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500",
     "options": [
       { "name": "Choco Galleta", "extra": 0 },
@@ -247,5 +245,41 @@
       { "name": "Cajeta", "extra": 0 },
       { "name": "Choco Café", "extra": 0 }
     ]
+  },
+  {
+    "id": 29,
+    "name": "Cereal con Leche, Chocolate y Fruta",
+    "price": 45,
+    "cat": "desayuno",
+    "desc": "Tazón de cereal crujiente con leche, acompañado de fruta fresca y un rico toque de chocolate.",
+    "img": "https://images.unsplash.com/photo-1588611910674-633092b76ce8?w=500",
+    "options": []
+  },
+  {
+    "id": 30,
+    "name": "Coctel de Fruta",
+    "price": 45,
+    "cat": "desayuno",
+    "desc": "Refrescante mezcla de fruta de temporada servida con suave yogurt, cereal crujiente y granola.",
+    "img": "https://images.unsplash.com/photo-1511690656952-34342d5c2895?w=500",
+    "options": []
+  },
+  {
+    "id": 31,
+    "name": "Agua",
+    "price": 15,
+    "cat": "bebida",
+    "desc": "Vaso de agua fresca del día, ideal para acompañar tu comida.",
+    "img": "https://images.unsplash.com/photo-1559839914-11aae62e1531?w=500",
+    "options": []
+  },
+  {
+    "id": 32,
+    "name": "Jarra de Agua (1lt)",
+    "price": 35,
+    "cat": "bebida",
+    "desc": "Jarra de agua fresca del día, la porción perfecta para compartir en la mesa.",
+    "img": "https://images.unsplash.com/photo-1559839914-11aae62e1531?w=500",
+    "options": []
   }
 ]
